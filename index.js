@@ -12,6 +12,8 @@ class Retangulo{
   }
 let quadrado = new Retangulo ( "10","10" )
   let retangulo = new Retangulo ( "30", "60")
+let aleatoriedade = new Retangulo ( "35", "70")
 console.log (retangulo.calcularArea())
 console.log (quadrado.area())
+console.log(aleatoriedade.area())
 
