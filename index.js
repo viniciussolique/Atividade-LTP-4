@@ -1,19 +1,47 @@
+class ErroCustomizado extends Error{
+  constructor(mensagem, nome){
+    super(mensagem);
+    this.name = nome;
+  }
+  mensagem(){
+    return this.name + "\n"+ this. mensasge +"\n" + this. stack.split("AAA");
+   
+  }
+}
+// Quem joga não pode pegar
+// Após o NEW tudo é class
 class Retangulo{
   constructor( altura, largura){
     this.altura = altura;
     this.largura = largura;
   }
   calcularArea(){
-    return this.altura*this.largura
+    
+      if(this.altura > 0 && this.largura > 0){
+       return this.altura*this.largura
+     }
+     else{
+       ///return "Você errou"
+       throw new ErroCustomizado("você errou", "nome do erro")
+     }
   }
     area(){
-      return this.calcularArea();
+        try{
+     return this.calcularArea();
+          }catch(error){
+          return error.stack
+          return error.mensagem()
+          
+          
+          }
     }
   }
-let quadrado = new Retangulo ( "10","10" )
-  let retangulo = new Retangulo ( "30", "60")
-let aleatoriedade = new Retangulo ( "35", "70")
-console.log (retangulo.calcularArea())
-console.log (quadrado.area())
-console.log(aleatoriedade.area())
+ 
+
+
+
+let retangulo  = new Retangulo ("0","30");
+console.log (retangulo.area())
+console.log (retangulo.area())
+
 
